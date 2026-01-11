@@ -38,17 +38,17 @@ async function translate(text, from = 'auto', to = 'vi') {
 
         // Handle specific error cases
         if (error.code === 'ECONNREFUSED') {
-            throw new Error('Không thể kết nối đến server dịch. Vui lòng thử lại sau.');
+            throw new Error('Unable to connect to the server. Please try again later.');
         }
         if (error.response?.status === 429) {
-            throw new Error('Quá nhiều yêu cầu. Vui lòng đợi một chút.');
+            throw new Error('Too many requests. Please wait a moment.');
         }
         if (error.response?.status === 400) {
-            throw new Error('Ngôn ngữ không được hỗ trợ hoặc văn bản không hợp lệ. ' + JSON.stringify(error.response?.data));
+            throw new Error('Language not supported or invalid text.' + JSON.stringify(error.response?.data));
         }
 
         console.error('❌ Translation error:', error.message);
-        throw new Error('Lỗi dịch thuật. Vui lòng thử lại.');
+        throw new Error('Translation error. Please try again.');
     }
 }
 

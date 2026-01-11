@@ -18,8 +18,8 @@ function startBot() {
 
     // Bot ready event
     client.once('ready', () => {
-        console.log(`✅ Bot đã sẵn sàng! Logged in as ${client.user.tag}`);
-        console.log(`📊 Đang hoạt động trên ${client.guilds.cache.size} servers`);
+        console.log(`✅ Bot is ready! Logged in as ${client.user.tag}`);
+        console.log(`📊 Currently operating on ${client.guilds.cache.size} servers`);
     });
 
     // Message event
@@ -27,7 +27,7 @@ function startBot() {
         try {
             await handleMessage(message);
         } catch (error) {
-            console.error('❌ Lỗi xử lý tin nhắn:', error);
+            console.error('❌ Message processing error:', error);
         }
     });
 
@@ -38,7 +38,7 @@ function startBot() {
 
     // Login
     if (!config.DISCORD_TOKEN || config.DISCORD_TOKEN === 'your_bot_token_here') {
-        console.error('❌ Lỗi: Chưa cấu hình DISCORD_TOKEN trong file .env');
+        console.error('❌ Error: DISCORD_TOKEN not configured in the .env file');
         process.exit(1);
     }
 

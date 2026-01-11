@@ -49,7 +49,7 @@ async function extractText(image) {
         };
     } catch (error) {
         console.error('❌ OCR error:', error.message);
-        throw new Error('Lỗi nhận diện chữ trong ảnh.');
+        throw new Error('Error in text recognition in images.');
     }
 }
 

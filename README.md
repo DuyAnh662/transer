@@ -1,73 +1,73 @@
 # Discord Translation Bot
 
-Bot Discord dịch văn bản và ảnh đa ngôn ngữ.
+A multilingual text and image translation Discord Bot.
 
-## Tính năng
+## Features
 
-- 🌍 Dịch văn bản tự động giữa nhiều ngôn ngữ
-- 🔍 Tự phát hiện ngôn ngữ nguồn (Auto Detect)
-- 🖼️ OCR - Đọc và dịch chữ trong ảnh
-- 💾 Lưu cấu hình ngôn ngữ cho từng user
+- 🌍 Automatic text translation between multiple languages
+- 🔍 Auto Detect source language
+- 🖼️ OCR - Extract and translate text from images
+- 💾 Save per-user language configuration
 
-## Cài đặt
+## Installation
 
-1. Clone project và cài dependencies:
+1. Clone the project and install dependencies:
 ```bash
 npm install
 ```
 
-2. Tạo Discord Bot:
-   - Vào [Discord Developer Portal](https://discord.com/developers/applications)
-   - Tạo Application mới
-   - Vào Bot → Copy Token
-   - Paste vào file `.env`
+2. Create a Discord Bot:
+   - Go to [Discord Developer Portal](https://discord.com/developers/applications)
+   - Create a new Application
+   - Go to Bot → Copy Token
+   - Paste it into the `.env` file
 
-3. Invite bot vào server:
+3. Invite the bot to your server:
    - OAuth2 → URL Generator
-   - Chọn: `bot`, `applications.commands`
+   - Select: `bot`, `applications.commands`
    - Permissions: `Send Messages`, `Read Message History`, `Attach Files`
 
-4. Chạy bot:
+4. Run the bot:
 ```bash
 npm start
 ```
 
-## Cách sử dụng
+## Usage
 
-### Đặt ngôn ngữ dịch
+### Set Translation Language
 ```
 Auto > Vietnamese
 English > Japanese
-Nhật > Việt
+Japanese > Vietnamese
 ```
 
-### Đổi mode dịch ảnh
+### Change Image Translation Mode
 ```
 Mode: Text
 Mode: Image
 ```
 
-### Dịch văn bản
-Gửi bất kỳ đoạn văn bản nào:
+### Translate Text
+Send any text message:
 ```
 Hello, how are you?
 ```
 
-### Dịch ảnh
-Gửi ảnh có chữ (PNG/JPG/WEBP), bot sẽ tự OCR và dịch.
+### Translate Image
+Send an image containing text (PNG/JPG/WEBP), the bot will automatically OCR and translate it.
 
-## Ngôn ngữ hỗ trợ
+## Supported Languages
 
-| Tên | Từ đồng nghĩa |
+| Name | Aliases |
 |-----|---------------|
 | Auto/Detect | auto |
-| English/Anh | en |
-| Vietnamese/Việt | vi |
-| Japanese/Nhật | ja |
-| Korean/Hàn | ko |
-| Chinese/Trung | zh |
-| French/Pháp | fr |
-| German/Đức | de |
+| English | en |
+| Vietnamese | vi |
+| Japanese | ja |
+| Korean | ko |
+| Chinese | zh |
+| French | fr |
+| German | de |
 | Spanish | es |
 
 ## License

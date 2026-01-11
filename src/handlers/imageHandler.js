@@ -114,7 +114,7 @@ async function downloadImage(url) {
         return Buffer.from(response.data);
     } catch (error) {
         console.error('❌ Error downloading image:', error.message);
-        throw new Error('Không thể tải ảnh. Vui lòng thử lại.');
+        throw new Error('The image could not be loaded. Please try again.');
     }
 }
 

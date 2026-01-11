@@ -63,7 +63,7 @@ async function addTextOverlay(imageBuffer, originalText, translatedText) {
         return result;
     } catch (error) {
         console.error('❌ Image overlay error:', error.message);
-        throw new Error('Lỗi xử lý hình ảnh.');
+        throw new Error('Image processing error.');
     }
 }
 
