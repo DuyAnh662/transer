@@ -27,9 +27,13 @@ async function handleText(message) {
 
         const result = await translate(content, langConfig.from, langConfig.to);
 
+        console.log('🔍 Translation Result Object:', JSON.stringify(result));
+
         // Format response
         const detectedDisplay = getLangDisplayName(result.detected);
         const toDisplay = getLangDisplayName(langConfig.to);
+
+        console.log(`📝 Detected: ${result.detected} (${detectedDisplay}), Target: ${langConfig.to} (${toDisplay})`);
 
         // Don't translate if same language
         if (result.detected === langConfig.to) {
@@ -40,7 +44,12 @@ async function handleText(message) {
         const botLang = langConfig.to === 'vi' ? 'vi' : 'en';
 
         const header = getMessage(botLang, 'translation_header');
-        const response = `📘 **${header}** (${detectedDisplay} → ${toDisplay}):\n\n${result.text}`;
+
+        if (!result.text) {
+            console.warn('❌ result.text is undefined before formatting!');
+        }
+
+        const response = `📘 **${header}** (${detectedDisplay} → ${toDisplay}):\n\n${result.text || 'Error: Empty translation'}`;
 
         // Discord message limit is 2000 characters
         if (response.length > 2000) {

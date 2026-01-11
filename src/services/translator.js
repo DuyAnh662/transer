@@ -29,9 +29,18 @@ async function translate(text, from = 'auto', to = 'vi') {
             }
         );
 
+        console.log('📡 LibreTranslate Response:', JSON.stringify(response.data));
+
+        const detected = response.data.detectedLanguage?.language || from;
+        const translatedText = response.data.translatedText;
+
+        if (!translatedText) {
+            console.warn('⚠️ translatedText is missing in API response!');
+        }
+
         return {
-            detected: response.data.detectedLanguage?.language || from,
-            text: response.data.translatedText,
+            detected: detected,
+            text: translatedText,
         };
     } catch (error) {
         console.error('❌ Translation Error Detail:', error.response?.data || error.message);
