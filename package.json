@@ -1,0 +1,24 @@
+{
+  "name": "discord-translation-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for translating text and images with OCR support",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "jest"
+  },
+  "keywords": ["discord", "translation", "ocr", "bot"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "discord.js": "^14.14.0",
+    "dotenv": "^16.3.0",
+    "sharp": "^0.33.0",
+    "tesseract.js": "^5.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
