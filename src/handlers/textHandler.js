@@ -37,7 +37,8 @@ async function handleText(message) {
 
         // Don't translate if same language
         if (result.detected === langConfig.to) {
-            return;
+            console.log('⚠️ Same language detected, but proceeding for debugging.');
+            // return; 
         }
 
         // Determine bot language (vi if target is vi, else en)
